@@ -1,6 +1,7 @@
 import './globals.css'
 import Header from "../components/header";
 import Footer from "../components/footer";
+import Script from 'next/script'
 
 export const metadata = {
     title: 'Andrew Lamichhane',
@@ -15,7 +16,7 @@ export default function RootLayout({
     return (
         <html lang="en">
             <head>
-                <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
+                <Script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js" defer></Script>
             </head>
             <body className="w-full h-screen bg-white flex flex-col">
                 <Header />
