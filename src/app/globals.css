@@ -4,7 +4,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Rozha+One&family=Volkhov:ital,wght@0,400;0,700;1,400;1,700&display=swap');
 
 * {
-    font-size: 1rem;
     color: #44403C;
     line-height: 1.75;
     letter-spacing: 0.45px;
@@ -12,6 +11,7 @@
 
 body {
     font-family: 'Rozha One', serif;
+    font-size: 1rem;
 }
 
 .volkh-font {

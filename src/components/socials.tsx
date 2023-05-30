@@ -6,7 +6,7 @@ const links = {
 
 export default function Socials() {
     return (
-        <div className="flex gap-3 mt-4 cursor-pointer">
+        <div className="flex gap-3 mt-4 cursor-pointer text-2xl">
             <a href={links.twitter}>
                 <i className='bx bxl-twitter'></i>
             </a>
