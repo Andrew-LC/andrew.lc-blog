@@ -21,7 +21,7 @@ export function getFeaturedSlugs() {
   return fs.readdirSync(featuredDir);
 }
 
-export function getPostBySlug(slug: string, fields: string[] = []): metaData {
+export function getPostBySlug(slug: string, fields: Partial<metaData[]>): Partial<metaData> {
   const realSlug = slug.replace(/\.org$/, '');
   const fullPath = join(postDir, `${realSlug}.org`);
   const content = fs.readFileSync(fullPath, 'utf8');
