@@ -1,8 +1,10 @@
+import Link from "next/link";
+
 export default function Header() {
     return (
         <header className="w-full p-4 bg-[#f5f5f4] flex justify-center font-bold">
             <div className="w-full lg:w-[740px] flex items-center justify-between text-[#3E3636]">
-                <a href="#" className="font-extrabold">andrew.lc</a>
+                <Link href="/" className="font-extrabold">andrew.lc</Link>
                 <div className="lg:hidden cursor-pointer" >
                     <i className='bx bx-menu-alt-right'></i>
                 </div>
