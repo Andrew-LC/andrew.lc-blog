@@ -3,10 +3,11 @@ import { join } from 'path';
 import orgToHtml from './orgToHtml';
 
 interface metaData {
-  slug: string | undefined;
-  content: string | undefined;
+  slug: string;
+  content: string;
   title: string;
-  date: string;
+  date: string,
+  tags?: string
 }
 
 const postDir = join(process.cwd(), '_posts');
@@ -46,7 +47,7 @@ export function getPostBySlug(slug: string, fields: string[] = []): metaData {
 
 
 
-export function getAllPosts(fields: any[]) {
+export function getAllPosts(fields: any[]): metaData[] {
   const slugs = getPostSlugs();
   const posts = slugs
     .map((slug) => getPostBySlug(slug, fields))
@@ -54,10 +55,9 @@ export function getAllPosts(fields: any[]) {
   return posts;
 }
 
-export function getAllFeatured(fields: any[]) {
+export function getAllFeatured(fields: any[]): metaData[] {
   const posts = getAllPosts(fields);
   const featured = posts.filter((post) => post.tags == "Featured");
-  console.log(featured)
   return featured;
 }
 

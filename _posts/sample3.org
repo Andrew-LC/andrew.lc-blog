@@ -4,4 +4,3 @@
 #+AUTHOR: Andrew Lamichhane
 #+TAGS: Featured
 
-* This is a featured article
