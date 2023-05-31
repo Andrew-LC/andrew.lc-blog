@@ -38,7 +38,7 @@ export function getPostBySlug(slug: string, fields: Partial<metaData[]> = []): P
       items[String(field) as keyof metaData] = String(org);
     }
     if (org.data[String(field)]) {
-      items[String(field) as keyof metaData] = org.data[field];
+      items[String(field) as keyof metaData] = org.data[String(field) as keyof metaData];
     }
   });
 
