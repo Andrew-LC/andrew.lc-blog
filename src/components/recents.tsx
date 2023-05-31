@@ -1,7 +1,7 @@
 import { getAllPosts } from "../lib/api";
 import Link from "next/link";
 
-export default function Recents() {
+export default async function Recents() {
     const res = getAllPosts([
         'title',
         'date',
