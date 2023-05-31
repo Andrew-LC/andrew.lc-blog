@@ -1,0 +1,7 @@
+#+TITLE: Featured Article 
+#+COVER_IMAGE: /assets/blog/hello-world/cover.jpg
+#+DATE: 2020-02-16
+#+AUTHOR: Andrew Lamichhane
+#+TAGS: Featured
+
+* This is a featured article

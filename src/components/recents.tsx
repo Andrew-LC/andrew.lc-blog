@@ -1,11 +1,12 @@
-import { getAllPosts } from "../lib/api";
+import { getAllPosts } from "../../lib/api";
 import Link from "next/link";
 
-export default async function Recents() {
-    const res = await getAllPosts([
+export default function Recents() {
+    const res = getAllPosts([
         'title',
         'date',
-        'slug'
+        'slug',
+        'tag'
     ])
     return (
         <div className="flex flex-col gap-2 mt-6">
@@ -17,7 +18,10 @@ export default async function Recents() {
                             <div key={index} className="text-lg" >
                                 <span className="mr-3 font-bold text-[#625757]">{article.date}</span>
                                 <Link href={`/post/${article.slug}`}>
-                                    <span className="volkh-font text-black text-[1.2rem] hover:underline cursor-pointer">{article.title}</span>
+                                    <span
+                                        className="volkh-font text-black text-[1.2rem] hover:underline cursor-pointer">
+                                        {article.title}
+                                    </span>
                                 </Link>
                             </div>
                         )

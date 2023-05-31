@@ -9,7 +9,7 @@ interface metaData {
   date: string;
 }
 
-const postDir = join(process.cwd(), 'posts');
+const postDir = join(process.cwd(), '_posts');
 const featuredDir = join(process.cwd(), 'posts/featured');
 
 export function getPostSlugs() {
@@ -46,11 +46,18 @@ export function getPostBySlug(slug: string, fields: string[] = []): metaData {
 
 
 
-export function getAllPosts(fields: metaData[]): metaData[] {
+export function getAllPosts(fields: any[]) {
   const slugs = getPostSlugs();
   const posts = slugs
     .map((slug) => getPostBySlug(slug, fields))
     .sort((post1, post2) => (post1.date > post2.date ? -1 : 1));
   return posts;
+}
+
+export function getAllFeatured(fields: any[]) {
+  const posts = getAllPosts(fields);
+  const featured = posts.filter((post) => post.tags == "Featured");
+  console.log(featured)
+  return featured;
 }
 
