@@ -1,11 +1,20 @@
 import { getPostBySlug } from "../../../../lib/api"
 
+interface metaData {
+    slug: string;
+    content: string;
+    title: string;
+    date: string,
+    tags?: string
+}
+
 export default function Post({ params }: { params: { slug: string } }) {
-    const res = getPostBySlug(params.slug, [
+    //@ts-ignore
+    const res: Partial<metaData> = getPostBySlug(params.slug, [
         "title",
         "date",
         "content"
-    ])
+    ]) as Partial<metaData>
     return (
         <div className="flex-1 pt-24 pb-16 w-[740px] mx-auto">
             <h1 className="font-extrabold text-6xl mb-2">{res.title}</h1>
