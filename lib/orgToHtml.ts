@@ -9,10 +9,10 @@ const processor = unified()
   .use(uniorg)
   .use(extractKeywords)
   .use(uniorg2rehype)
-
   //@ts-ignore
   .use(html);
 
+//@ts-ignore
 export default function orgToHtml(org) {
   const result = processor.processSync(org);
   return result;
