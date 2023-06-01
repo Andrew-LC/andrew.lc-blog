@@ -1,13 +1,7 @@
 import { getAllPosts } from "../../lib/api";
 import Link from "next/link";
+import { metaData } from "../types";
 
-interface metaData {
-    slug: string;
-    content: string;
-    title: string;
-    date: string,
-    tags?: string
-}
 
 export default function Recents() {
     //@ts-ignore
@@ -18,16 +12,16 @@ export default function Recents() {
     ] as metaData)
     return (
         <div className="flex flex-col gap-2 mt-6">
-            <h2 className="font-bold text-2xl mb-2"># Recents</h2>
+            <h2 className="font-semibold text-2xl mb-2"># Recents</h2>
             <div>
                 {
                     res.map((article, index) => {
                         return (
-                            <div key={index} className="text-lg" >
-                                <span className="mr-3 font-bold text-[#625757]">{article!.date}</span>
+                            <div key={index} className="flex flex-col text-sm lg:block lg:text-lg" >
+                                <span className="date mr-3 text-[#625757]">{article!.date}</span>
                                 <Link href={`/post/${article!.slug}`}>
                                     <span
-                                        className="volkh-font text-black text-[1.2rem] hover:underline cursor-pointer">
+                                        className="volkh-font opacity-[.9] text-black text-[1.1rem] lg:text-[1.2rem] hover:underline cursor-pointer">
                                         {article!.title}
                                     </span>
                                 </Link>

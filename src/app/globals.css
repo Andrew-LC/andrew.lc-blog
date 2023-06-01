@@ -1,19 +1,35 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-@import url('https://fonts.googleapis.com/css2?family=Rozha+One&family=Volkhov:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+@font-face {
+    font-family: 'Rohza';
+    src: url("/icons/RozhaOne-Regular.ttf")
+}
+
+@font-face {
+    font-family: 'Vollkorn';
+    src: url("/icons/Vollkorn-Regular.ttf")
+}
 
 * {
-    color: #44403C;
     line-height: 1.75;
     letter-spacing: 0.45px;
 }
 
 body {
-    font-family: 'Rozha One', serif;
     font-size: 1rem;
 }
 
-.volkh-font {
-    font-family: 'Volkhov', serif;
+h1,h2,h3,h4,h5,h6,date {
+    font-family: 'Rohza';
+    color: #44403C!important;
+}
+
+p, span {
+    font-family: 'Vollkorn', serif;
+}
+
+.header {
+    font-family: Overpass Mono,Monaco,Andale Mono,AndaleMono,ui-monospace,SFMono-Regular,Menlo,Consolas,Liberation Mono,Courier New,monospace;
 }

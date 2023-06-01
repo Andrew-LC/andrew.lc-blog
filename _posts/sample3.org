@@ -1,6 +1,8 @@
 #+TITLE: Featured Article 
-#+COVER_IMAGE: /assets/blog/hello-world/cover.jpg
+#+COVER_IMAGE: /images/cover2.jpg
 #+DATE: 2020-02-16
 #+AUTHOR: Andrew Lamichhane
 #+TAGS: Featured
+
+Generated using [[https://app.leonardo.ai][Leonardo ai]]
 
