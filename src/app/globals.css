@@ -40,10 +40,11 @@ p, span {
     bottom: 60%;
     right: 0;
     width: 300px;
+    height: 300px;
     border-top-left-radius: 100%;
     border-bottom-left-radius: 100%;
     border-bottom-right-radius: 100%;
-    background-color: #d4d4c3;
+    background-color: #ccccc3;
     z-index: 100;
     transistion: all 5s ease-in-out;
 }
