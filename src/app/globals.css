@@ -32,3 +32,18 @@ p, span {
 .header {
     font-family: Overpass Mono,Monaco,Andale Mono,AndaleMono,ui-monospace,SFMono-Regular,Menlo,Consolas,Liberation Mono,Courier New,monospace;
 }
+
+
+.menu {
+    position: absolute;
+    top: 0;
+    bottom: 60%;
+    left: 30%;
+    right: 0;;
+    border-top-left-radius: 100%;
+    border-bottom-left-radius: 100%;
+    border-bottom-right-radius: 100%;
+    background-color: #d4d4c3;
+    z-index: 100;
+    transistion: all 5s ease-in-out;
+}
