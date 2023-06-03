@@ -21,7 +21,7 @@ export default function Recents() {
                                 <span className="date mr-3 text-[#625757]">{article!.date}</span>
                                 <Link href={`/post/${article!.slug}`}>
                                     <span
-                                        className="volkh-font opacity-[.9] text-black text-[1.1rem] lg:text-[1.2rem] hover:underline cursor-pointer">
+                                        className="volkh-font opacity-[.9] dark:opacity-[1] text-black text-[1.1rem] lg:text-[1.2rem] hover:underline cursor-pointer">
                                         {article!.title}
                                     </span>
                                 </Link>
