@@ -34,15 +34,15 @@ export default function Header() {
                 <Link href="/" className="dark:text-dark-font font-extrabold">andrew.lc</Link>
                 <div className="lg:hidden flex items-center gap-4 dark:text-dark-font" >
                     <div style={{ "display": `${menu}` }} className="absolute w-[100px] z-[50] p-4 rounded-md right-2 top-12 shadow-md text-font-color border-[.7px] border-dark-header dark:border-light-header dark:text-dark-font border-1 border-white dark:bg-dark-header menu text-black flex flex-col items-center justify-center gap-4">
-                        <a href="#">Posts</a>
-                        <a href="#">Tags</a>
+                        <Link href="/posts">Posts</Link>
+                        <a href="#">Graph</a>
                     </div>
                     <i onClick={toggleTheme} className='bx bx-moon dark:text-dark-font cursor-pointer' ></i>
                     <i onClick={toggleMenu} className='bx bx-menu-alt-right text-2xl cursor-pointer z-[100]'></i>
                 </div>
                 <nav className="dark:text-dark-font hidden lg:flex items-center gap-5 cursor-pointer">
                     <a href="#">Posts</a>
-                    <a href="#">Tags</a>
+                    <a href="#">Graph</a>
                     <i onClick={toggleTheme} className='bx bx-moon dark:text-dark-font' ></i>
                     <i className='bx bx-search-alt-2' ></i>
                 </nav>
