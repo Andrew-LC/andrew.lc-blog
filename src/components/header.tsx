@@ -41,7 +41,7 @@ export default function Header() {
                     <i onClick={toggleMenu} className='bx bx-menu-alt-right text-2xl cursor-pointer z-[100]'></i>
                 </div>
                 <nav className="dark:text-dark-font hidden lg:flex items-center gap-5 cursor-pointer">
-                    <a href="#">Posts</a>
+                    <Link href="/posts">Posts</Link>
                     <a href="#">Graph</a>
                     <i onClick={toggleTheme} className='bx bx-moon dark:text-dark-font' ></i>
                     <i className='bx bx-search-alt-2' ></i>
