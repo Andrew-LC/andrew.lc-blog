@@ -33,7 +33,7 @@ export default function Header() {
             <div className="w-full lg:w-[740px] flex items-center justify-between text-[#3E3636]">
                 <Link href="/" className="dark:text-dark-font font-extrabold">andrew.lc</Link>
                 <div className="lg:hidden flex items-center gap-4 dark:text-dark-font" >
-                    <div style={{ "display": `${menu}` }} className="shadow-md text-font-color border-[.7px] border-dark-header dark:border-light-header dark:text-dark-font border-1 border-white dark:bg-dark-header menu text-black flex flex-col items-center justify-center gap-4">
+                    <div style={{ "display": `${menu}` }} className="absolute p-4 rounded-md right-2 top-12 shadow-md text-font-color border-[.7px] border-dark-header dark:border-light-header dark:text-dark-font border-1 border-white dark:bg-dark-header menu text-black flex flex-col items-center justify-center gap-4">
                         <a href="#">Posts</a>
                         <a href="#">Tags</a>
                     </div>
