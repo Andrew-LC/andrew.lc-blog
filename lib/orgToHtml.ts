@@ -12,7 +12,7 @@ const processor = unified()
   .use(extractKeywords)
   .use(uniorg2rehype)
   //@ts-ignore
-  .use(highlight)
+  .use(highlight, { ignoreMissing: true, detect: true })
   //@ts-ignore
   .use(katex)
   //@ts-ignore

@@ -1,5 +1,6 @@
 import { getPostBySlug } from "../../../../lib/api"
 import { metaData } from "../../../types";
+import "../../gruvbox.css";
 
 
 export default function Post({ params }: { params: { slug: string } }) {

@@ -62,3 +62,4 @@ export function getAllFeatured(fields: Partial<metaData[]>): Partial<metaData[]>
   return featured as Partial<metaData[]>;
 }
 
+

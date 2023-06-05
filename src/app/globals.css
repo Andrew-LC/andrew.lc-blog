@@ -12,6 +12,12 @@
     src: url("/icons/Vollkorn-Regular.ttf")
 }
 
+@font-face {
+    font-family: 'Hack Nerd Font';
+    src: url("/icons/HackNerdFont-Regular.ttf")
+}
+
+
 * {
     line-height: 1.75;
     letter-spacing: 0.45px;
@@ -33,3 +39,8 @@ p, span {
     font-family: Overpass Mono,Monaco,Andale Mono,AndaleMono,ui-monospace,SFMono-Regular,Menlo,Consolas,Liberation Mono,Courier New,monospace;
 }
 
+
+pre, code {
+    background: #282828!important;
+    font-family: 'Hack Nerd Font'!important;
+}
