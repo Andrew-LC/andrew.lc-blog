@@ -1,6 +1,7 @@
 "use client"
 import React, { useState, useEffect } from "react";
 import { search } from "../../lib/fuse";
+import { metaData } from "../types";
 import Link from "next/link";
 
 interface Post {
@@ -12,7 +13,7 @@ interface Post {
 }
 
 interface SearchProps {
-    data: Post[];
+    data: Partial<metaData[]>;
 }
 
 export default function Search({ data }: SearchProps) {
@@ -28,8 +29,7 @@ export default function Search({ data }: SearchProps) {
         setTemp(value);
         //@ts-ignore
         const values = search(value, data);
-        //@ts-ignore
-        setPosts(values);
+        setPosts((values as unknown[]) as Post[]);
     };
 
     return (
