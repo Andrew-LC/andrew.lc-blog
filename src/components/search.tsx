@@ -37,7 +37,7 @@ export default function Search({ data }: SearchProps) {
             <input
                 onChange={handleChange}
                 placeholder="Search Post"
-                className="w-full p-2 outline-none border-2 border-font-color rounded-md"
+                className="w-full p-2 outline-none border-2 border-font-color rounded-md dark:bg-dark-header dark:text-dark-font"
             />
             <div className="mt-6 flex flex-col gap-2">
                 {posts.map((article, index) => (
