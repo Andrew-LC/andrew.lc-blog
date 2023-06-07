@@ -1,5 +1,5 @@
 #+Title: Emacs Literate Programming
-#+COVER_IMAGE: /images/cover.webp
+#+COVER_IMAGE: /images/literate_programming.png
 #+DATE: 2023-06-07
 #+TAGS: Featured
 #+AUTHOR: Andrew Lamichhane
