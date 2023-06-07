@@ -2,6 +2,8 @@
 @tailwind components;
 @tailwind utilities;
 
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@100;400;500;700&display=swap');
+
 @font-face {
     font-family: 'Rohza';
     src: url("/icons/RozhaOne-Regular.ttf")
@@ -40,7 +42,21 @@ p, span {
 }
 
 
-pre, code {
+pre {
     background: #282828!important;
-    font-family: 'Hack Nerd Font'!important;
+    font-family: 'Roboto Mono', monospace!important;
+}
+
+code {
+    font-family: 'Roboto Mono', monospace!important;
+}
+
+
+.prose-custom > * {
+    margin-top: 1.2rem;
+    margin-bottom: 1.2rem;
+}
+
+.prose-custom > h1, h2, h3 {
+    margin-top: 2rem!important;
 }
