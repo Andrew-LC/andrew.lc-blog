@@ -5,7 +5,7 @@
 These are the notes that I took while reading the docs !
 #+end_quote
 
-* Solid Principles
+** Solid Principles
 
 Declarative programming refers to the practice of writing computer code that explains what your computer should do rather than how to accomplish it. 
 
@@ -30,7 +30,7 @@ I feel that decalarative way is like the *black box* approach, but I am really n
 
 The component structure and the updates are handled independently.
 
-* Primitives
+** Primitives
 
 Basic types available in Solid JS, one interesting thing about it is that they are not owned by the component and can be used outside it.
 
@@ -118,7 +118,7 @@ Resources are special signals designed specifically to handle asynchronous loadi
 #+end_src
 
 
-* References
+*** References
 
 1. [[https://docs.solidjs.com/guides/foundations/why-solid][Why Solid Js]]
 2. [[https://docs.solidjs.com/guides/foundations/thinking-solid#2-vanishing-components][Primitives]] 
