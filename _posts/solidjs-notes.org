@@ -1,0 +1,126 @@
+Title: Solid JS
+#+date: 2023:6:22
+
+#+begin_quote
+These are the notes that I took while reading the docs !
+#+end_quote
+
+* Solid Principles
+
+Declarative programming refers to the practice of writing computer code that explains what your computer should do rather than how to accomplish it. 
+
+Imperative programming tells the computer how to do something step by step.
+
+*Solid is decalarative*
+
+#+begin_src javascript 
+  // Declarative way
+  let numbers = [1, 2, 3, 4, 5];
+  let double = numbers.map((value, i) => value * 2);
+
+  // Imperative way
+  let numbers = [1, 2, 3, 4, 5];
+  let double = [];
+  for (let i = 0; i < numbers.length; i++) {
+      double.push(numbers[i] * 2);
+  }
+#+end_src
+
+I feel that decalarative way is like the *black box* approach, but I am really not sure if this paradigm is correct.
+
+The component structure and the updates are handled independently.
+
+* Primitives
+
+Basic types available in Solid JS, one interesting thing about it is that they are not owned by the component and can be used outside it.
+
+#+begin_src javascript
+ import { createSignal } from "solid-js";
+ const [count, setCount] = createSignal(0); 
+#+end_src
+
+*props*
+
+#+begin_src typescript 
+  interface NameProps {
+    firstName: string,
+    lastName: string
+  }
+
+  export function Name(props: NameProps){
+    return(
+      <div>
+        {props.firstName + " " + props.lastName}
+      </div>
+    )
+  }
+#+end_src
+
+React uses destructuring to pass and assign props, while in solid js it is much easier.
+
+*State Management*
+
+In react we had to pass in a dependency state to track the changes, while in solid it is automatic.
+
+#+begin_src typescript 
+  useEffect(() => {
+    console.log(count);
+  }, [count])
+#+end_src
+
+*Loops*
+
+Instead of maps they use their own custom component called <For />
+
+#+begin_src typescript
+   // Solid JS
+   <For each={books()}>
+    {(book) => {
+      return (
+        <li>
+          {book.title} ({book.author})
+        </li>
+      );
+    }}
+  </For> 
+
+  // React JS
+  {books.map(book => <li key={book.title}>{book.title} ({book.author}</li>)}
+#+end_src
+
+If we used array.map here in Solid, every element inside the book would have to rerender whenever the books signal changes. The For component checks the array when it changes, and only updates the necessary element. It's the same kind of checking that React's VDOM rendering system does for us when we use .map.
+
+Note that, unlike in React, we don't need to provide a key to the For component: it compares each element by reference.
+
+*Conditional Rendering*
+
+#+begin_src typescript
+ <Show
+        when={props.isLoggedIn == true}
+        fallback={<>Youre not logged in !</>}
+      >
+        {props.firstName + ' ' + props.lastName}
+        <br />
+        <span>{count()}</span>
+        <button onClick={increment}>Increment</button>
+ </Show> 
+#+end_src
+
+It is easier than what I can do in react, uhh its less code in one sense, and more abstraction.
+I think for webapps this might be a better mental model over all.
+
+*Fetching Data*
+
+Resources are special signals designed specifically to handle asynchronous loading and are created using the createResource function.
+
+#+begin_src typescript 
+  const [data] = createResource(signal, dataFetchingFunction);
+#+end_src
+
+
+* References
+
+1. [[https://docs.solidjs.com/guides/foundations/why-solid][Why Solid Js]]
+2. [[https://docs.solidjs.com/guides/foundations/thinking-solid#2-vanishing-components][Primitives]] 
+3. [[https://www.youtube.com/watch?v=w14cgW9pVkg][Is SolidJS better ReactJS]] 
+4. [[https://docs.solidjs.com/guides/how-to-guides/comparison/react][Comparison with react]]
