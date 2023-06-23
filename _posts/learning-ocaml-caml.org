@@ -1,0 +1,69 @@
+#+TITLE: Learning Ocaml 
+#+DATE: 2023-06-23 
+
+OCaml is a strictly evaluated functional language with some imperative features.
+
+Along with StandardML and its dialects it belongs to ML language family. F# is also heavily influenced by OCaml.
+
+Just like StandardML, OCaml features both an interpreter, that can be used interactively, and a compiler. The interpreter binary is normally called “ocaml” and the compiler is “ocamlopt”. 
+
+*Expressions and Varibles*
+
+#+begin_src ocaml 
+ 50 * 50;;
+
+ let x = 50;;
+  
+ let x = 50 in x * x;; // Expression, does not evalute if you call x;
+#+end_src
+
+** *Functions*
+- Functions are values
+- The sqr function is passed into the is_even_sqr function as a value and it automatically identifies that the return type is bool
+- The normal type used is int, you can use float using the +. operator
+
+#+begin_src ocaml 
+ let sqr x = x * x;;
+ sqr 5;; --> 25
+ 
+ let is_even_sqr x =
+   sqr x mod 2 = 0;;
+ 
+ 1 + 2.5;; --> Error. no implicit type casting
+
+ 1. +. 2.5;; --> 3.5
+#+end_src
+
+** *Mutually Recursive Functions*
+#+begin_src ocaml 
+let rec
+  is_even = function
+  | 0 -> true
+  | n -> is_odd (n-1)
+and
+  is_odd = function
+  | 0 -> false
+  | n -> is_even (n-1)
+;;
+#+end_src
+
+** *Primitive Types*
+
+- Note that strings are not list of characters in ocaml, it has its own internal represenation
+
+#+begin_src 
+int         63-bit signed int on 64-bit processors,
+            or 31-bit signed int on
+            32-bit processors
+float       IEEE double-precision floating point, equivalent to C's double
+bool        A Boolean, written either 'true' or 'false'
+char        An 8-bit character
+string      A string (sequence of 8 bit chars)
+
+#+end_src
+
+
+
+** RESOURCES:
+- [[https://ocaml.org/docs/first-hour][Your first day with OCaml]]
+- [[https://learnxinyminutes.com/docs/ocaml/][learn x in y minutes]] 
