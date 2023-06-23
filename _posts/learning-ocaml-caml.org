@@ -34,7 +34,7 @@ Just like StandardML, OCaml features both an interpreter, that can be used inter
  1. +. 2.5;; --> 3.5
 #+end_src
 
-** *Mutually Recursive Functions*
+*** *Mutually Recursive Functions*
 #+begin_src ocaml 
 let rec
   is_even = function
@@ -47,7 +47,7 @@ and
 ;;
 #+end_src
 
-** *Primitive Types*
+*** *Primitive Types*
 
 - Note that strings are not list of characters in ocaml, it has its own internal represenation
 
@@ -62,8 +62,8 @@ string      A string (sequence of 8 bit chars)
 
 #+end_src
 
+--------------------
 
-
-** RESOURCES:
+*** RESOURCES:
 - [[https://ocaml.org/docs/first-hour][Your first day with OCaml]]
 - [[https://learnxinyminutes.com/docs/ocaml/][learn x in y minutes]] 
