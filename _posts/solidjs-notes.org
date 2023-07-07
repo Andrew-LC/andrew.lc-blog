@@ -1,5 +1,5 @@
 #+Title: Solid JS
-#+DATE: 2023-6-22
+#+DATE: 2023-06-22
 
 #+begin_quote
 These are the notes that I took while reading the docs !

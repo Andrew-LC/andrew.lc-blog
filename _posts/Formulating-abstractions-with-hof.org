@@ -1,0 +1,86 @@
+#+Title: Formulating Abstractions with Higher-Order Procedures
+#+date: 2023-07-07
+
+Procedures that can manipulate other procedures are called as high order procedure.
+
+The main reason that this is useful is that instead of being able to just operate on primitives such as multiplication etc, we are able to
+formulate patterns and ideas that are high level abstractions and use
+them as operations, this is much more powerful.
+
+#+begin_quote
+One of the things we should demand
+from a powerful programming language is the ability to build abstrac-
+tions by assigning names to common paerns and then to work in terms
+of the abstractions directly. Procedures provide this ability.
+#+end_quote
+
+For example we look at the 'sum-of-integers', 'sum-cubes' procedures, we can see that they all have the same pattern.
+
+#+begin_src scheme 
+  define (⟨name⟩ a b)
+  (if (> a b)
+      0
+      (+ (⟨term⟩ a)
+         (⟨name⟩ (⟨next⟩ a) b)))) 
+#+end_src
+
+We are able to use this procedure as an abstraction for summation.
+
+*Types of ways that one cane manipulate:*
++ Passing procedures as arguments
++ Procedures as return values
+
+
+*** Lambda
+Procedures with no name.
+
+#+begin_src scheme
+  (lambda (x) (* x x))
+
+  (define square
+    (lambda(x)(* x x)))
+
+  (define (square x) (* x x))
+#+end_src
+
+In the above code, all the sqaure procedures are the same, one thing to remember in lisp is that all are just expressions that
+can be passed into other expressions.
+
+*** Let
+
+#+begin_src scheme
+  (let ((⟨var1 ⟩ ⟨exp1 ⟩)
+        (⟨var2 ⟩ ⟨exp2 ⟩)
+        ...
+        (⟨varn ⟩ ⟨expn ⟩))
+    ⟨body⟩) 
+#+end_src
+
+** Procedures as general methods
+-----
+This is a set of examples of how abstraction is used to express generals methods of computation.
+
++ Fixed point
++ Half-interval method
+
+** Procedures as Returned values
+-----
+#+begin_src scheme 
+  (define (average-damp f)
+    (lambda (x) (average x (f x))))
+
+  ((average-damp square) 10) ;; 55
+#+end_src
+
+The procedure takes a procedure as a argument and returns another
+procedure.
+
+** Abstractions First Class Procedures
+-----
+One should be able to identify underlying patterns and build abstractions on top of them and generalize them, but its always
+not necessary to always build abstraction.
+
++ They may be named by variables.
++ They may be passed as arguments to procedures.
++ They may be returned as the results of procedures.
++ They may be included in data structures

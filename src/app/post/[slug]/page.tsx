@@ -16,7 +16,7 @@ export default function Post({ params }: { params: { slug: string } }) {
             <h1 className="dark:text-dark-font text-font-color font-extrabold tracking-tight text-3xl lg:text-4xl mb-2">{res.title}</h1>
             <span className="text-stone-500 font-semibold mb-4">Posted on {res.date}</span>
             {res.cover_image ? <img className="mt-4 mb-4 w-full" src={`${res.cover_image}`} alt="cover" /> : ""}
-            <div className="prose prose-custom prose-headings:text-font-color prose-headings:dark:text-dark-font prose-lg dark:prose-invert prose-p:volkh-font max-w-none mt-5 opacity-1" dangerouslySetInnerHTML={{ __html: res.content as TrustedHTML }} />
+            <div className="prose prose-custom prose-li:mb-none prose-headings:text-font-color prose-headings:dark:text-dark-font prose-lg dark:prose-invert prose-p:volkh-font max-w-none mt-5 opacity-1" dangerouslySetInnerHTML={{ __html: res.content as TrustedHTML }} />
         </div>
     );
 }
