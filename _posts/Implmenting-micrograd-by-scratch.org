@@ -1,0 +1,11 @@
+#+TITLE: The spelled-out intro to neural networks and backpropagation: building micrograd
+#+DATE: 2024-07-12 Fri
+#+AUTHOR: Andrew Lamichhane
+
++ Gradient Descent
++ Implementing a basic micrograd
++ Backpropagation
++ Tensors
+
+**** Links:
++ [[https://www.youtube.com/watch?v=VMj-3S1tku0][The spelled-out intro to neural networks and backpropagation: building micrograd]]
